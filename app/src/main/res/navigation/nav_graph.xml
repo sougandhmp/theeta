@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashActivity">
-
-    <activity
-        android:id="@+id/splashActivity"
-        android:name="com.android.theta.splash.SplashActivity"
-        android:label="activity_splash"
-        tools:layout="@layout/activity_splash" />
-    <activity
-        android:id="@+id/loginActivity"
-        android:name="com.android.theta.login.LoginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" />
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.android.theta.login.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.android.theta.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment2_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:launchSingleTop="true" />
+    </fragment>
 </navigation>
