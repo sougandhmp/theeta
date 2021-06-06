@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.android.theta.R
+import com.android.theta.databinding.LoginFragmentBinding
 
 class LoginFragment : Fragment() {
 
@@ -17,28 +17,26 @@ class LoginFragment : Fragment() {
     }
 
     private lateinit var viewModel: LoginViewModel
+    private lateinit var binding: LoginFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        var view = inflater.inflate(R.layout.login_fragment, container, false)
-        var logInButton = view.findViewById<Button>(R.id.loginButton);
-        logInButton.setOnClickListener {
-            login()
-        }
-        return view
+    ): View {
+        binding = LoginFragmentBinding.inflate(layoutInflater, container, false)
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onStart() {
+        super.onStart()
+        binding.loginButton.setOnClickListener {
+            login()
+        }
     }
 
     private fun login() {
         findNavController().navigate(R.id.action_login_to_user_view)
-
     }
 
 
