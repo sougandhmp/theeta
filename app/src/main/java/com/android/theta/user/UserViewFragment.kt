@@ -1,4 +1,4 @@
-package com.android.theta.login.user
+package com.android.theta.user
 
 import android.os.Bundle
 import android.view.LayoutInflater

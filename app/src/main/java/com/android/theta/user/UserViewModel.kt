@@ -1,4 +1,4 @@
-package com.android.theta.login.user
+package com.android.theta.user
 
 import androidx.lifecycle.ViewModel
 

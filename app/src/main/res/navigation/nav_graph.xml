@@ -25,6 +25,6 @@
     </fragment>
     <fragment
         android:id="@+id/userViewFragment"
-        android:name="com.android.theta.login.user.UserViewFragment"
+        android:name="com.android.theta.user.UserViewFragment"
         android:label="UserViewFragment" />
 </navigation>
