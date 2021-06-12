@@ -24,7 +24,7 @@ class UserViewFragment : Fragment() {
     private val userViewModel by viewModels<UserViewModel>()
     private lateinit var binding: UserViewFragmentBinding
 
-    private lateinit var userViewAdapter: UserViewAdapter
+    private  var userViewAdapter =UserViewAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
