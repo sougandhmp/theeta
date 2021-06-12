@@ -18,6 +18,7 @@ class ItemListFragment : Fragment() {
     private lateinit var viewModel: IteamListModel
     private lateinit var binding: ItemListFragmentBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
