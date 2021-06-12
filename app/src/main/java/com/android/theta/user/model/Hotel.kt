@@ -6,7 +6,7 @@ data class Hotel(
      var id: Int,
      var name: String,
      var styleName: String,
-     var avgPrceForTwo: String
+     var avgPriceForTwo: String
 ) {
      object HotelDiff : DiffUtil.ItemCallback<Hotel>() {
           override fun areItemsTheSame(oldItem: Hotel, newItem: Hotel) = oldItem.name == newItem.name

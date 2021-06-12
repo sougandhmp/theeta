@@ -23,7 +23,7 @@
         android:transitionName="@{hotel.name}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/Hotellayout"
+            android:id="@+id/hotelLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -32,7 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                app:srcUrl="@{hotel.name}"
+                app:srcUrl="@{hotel.id}"
                 app:layout_constraintBottom_toTopOf="@+id/left_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

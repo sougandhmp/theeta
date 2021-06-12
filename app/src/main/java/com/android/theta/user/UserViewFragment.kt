@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.android.theta.R
@@ -20,7 +21,7 @@ class UserViewFragment : Fragment() {
         fun newInstance() = UserViewFragment()
     }
 
-    private lateinit var userViewModel: UserViewModel
+    private val userViewModel by viewModels<UserViewModel>()
     private lateinit var binding: UserViewFragmentBinding
 
     private lateinit var userViewAdapter: UserViewAdapter
@@ -43,7 +44,7 @@ class UserViewFragment : Fragment() {
             }
             lifecycleOwner = this@UserViewFragment
         }
-        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+     //   userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         return binding.root
     }
 
