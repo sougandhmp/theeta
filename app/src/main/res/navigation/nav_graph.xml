@@ -25,16 +25,21 @@
     </fragment>
     <fragment
         android:id="@+id/userViewFragment"
-        android:name="com.android.theta.user.UserViewFragment"
+        android:name="com.android.theta.user.main.UserViewFragment"
         android:label="UserViewFragment" >
         <action
             android:id="@+id/action_userView_to_itemList"
             app:destination="@id/itemListFragment"
             app:popUpTo="@id/nav_graph"
             app:launchSingleTop="true" />
+
     </fragment>
     <fragment
         android:id="@+id/itemListFragment"
         android:name="com.android.theta.user.ItemListFragment"
-        android:label="ItemListFragment" />
+        android:label="ItemListFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>>
 </navigation>

@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -53,5 +54,7 @@ dependencies {
 
     implementation 'com.google.dagger:hilt-android:2.37'
     annotationProcessor 'com.google.dagger:hilt-compiler:2.37'
+
+   // implementation "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
 
 }
