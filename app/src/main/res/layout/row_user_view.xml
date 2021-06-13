@@ -27,16 +27,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-          <!--  <ImageView
+         <ImageView
                 android:id="@+id/left_thumb"
                 android:layout_width="0dp"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                app:srcUrl="@{hotel.id}"
+               android:src="@drawable/hotel1"
                 app:layout_constraintBottom_toTopOf="@+id/left_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />-->
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@id/left_title"

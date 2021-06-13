@@ -15,12 +15,12 @@ class UserViewModel : ViewModel() {
 
     private fun getHotelList(): List<Hotel> {
         var hotelList = ArrayList<Hotel>()
-        hotelList.add(Hotel(id = 1, name = "Hotel1", styleName = "kerala", avgPriceForTwo = "200"))
-        hotelList.add(Hotel(id = 2, name = "Hotel2", styleName = "south", avgPriceForTwo ="200"))
-        hotelList.add(Hotel(id = 3, name = "Hotel3", styleName = "north",avgPriceForTwo = "100"))
-        hotelList.add(Hotel(id = 4, name = "Hotel4", styleName = "south",avgPriceForTwo = "300"))
-        hotelList.add(Hotel(id = 5, name = "Hotel5", styleName = "north", avgPriceForTwo ="600"))
-        hotelList.add(Hotel(id = 6, name = "Hotel6", styleName = "south",avgPriceForTwo = "700"))
+        hotelList.add(Hotel(id = 1, name = "Hotel1", styleName = "kerala", avgPriceForTwo = "200",imgUrl = "@drawable/hotel1"))
+        hotelList.add(Hotel(id = 2, name = "Hotel2", styleName = "south", avgPriceForTwo ="200",imgUrl = "@drawable/hotel1"))
+        hotelList.add(Hotel(id = 3, name = "Hotel3", styleName = "north",avgPriceForTwo = "100",imgUrl = "@drawable/hotel1"))
+        hotelList.add(Hotel(id = 4, name = "Hotel4", styleName = "south",avgPriceForTwo = "300",imgUrl = "@drawable/hotel1"))
+        hotelList.add(Hotel(id = 5, name = "Hotel5", styleName = "north", avgPriceForTwo ="600",imgUrl = "@drawable/hotel1"))
+        hotelList.add(Hotel(id = 6, name = "Hotel6", styleName = "south",avgPriceForTwo = "700",imgUrl = "@drawable/hotel1"))
         return hotelList;
 
     }
