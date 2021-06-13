@@ -39,28 +39,11 @@
                 android:padding="16dp">
 
                 <!-- Title, secondary and supporting text -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:text="@{item.name}"
-                        android:textAppearance="?attr/textAppearanceHeadline6" />
-
-                    <RatingBar
-                        style="@style/Base.Widget.AppCompat.RatingBar.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-
-
-                        android:rating="4.5" />
-                </LinearLayout>
+                    android:text="@{item.name}"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -88,20 +71,26 @@
                 android:layout_margin="8dp"
                 android:orientation="horizontal">
 
+                <RatingBar
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="20dp"
+                    android:numStars="5"
+                    android:rating="@{item.rating}" />
+
                 <com.google.android.material.button.MaterialButton
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="155dp"
                     android:text="Add" />
 
-                <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View Reviews" />
 
-                "
+
+
             </LinearLayout>
 
         </LinearLayout>

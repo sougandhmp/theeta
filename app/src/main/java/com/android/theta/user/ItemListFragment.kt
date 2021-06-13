@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.android.theta.databinding.ItemListFragmentBinding
 import com.android.theta.user.model.Item
-import com.android.theta.user.model.Vendor
 import dagger.hilt.android.AndroidEntryPoint
 import observe
 
@@ -20,10 +19,10 @@ class ItemListFragment : Fragment() {
         fun newInstance() = ItemListFragment()
     }
 
-    private  val viewModel by viewModels<ItemListViewModel>()
+    private val viewModel by viewModels<ItemListViewModel>()
     private lateinit var binding: ItemListFragmentBinding
 
-    private  val itemListAdapter= ItemListAdapter()
+    private val itemListAdapter = ItemListAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,11 +48,9 @@ class ItemListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.apply {
-observe(itemList,::observeItems)
+            observe(itemList, ::observeItems)
 
         }
-
-
 
 
     }
@@ -62,10 +59,6 @@ observe(itemList,::observeItems)
         list ?: return
         itemListAdapter.submitList(list)
     }
-
-
-
-
 
 
 }
