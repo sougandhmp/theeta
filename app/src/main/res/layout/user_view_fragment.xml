@@ -5,20 +5,26 @@
     tools:ignore="RtlSymmetry"
     tools:targetApi="q">
 
+
     <LinearLayout
         android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context=".user.UserViewFragment">
+        tools:context=".MainActivity">
+        <include
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/hotel_list_recycler"
+            android:id="@+id/vendor_list_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
             app:spanCount="2"
-            tools:listitem="@layout/row_user_view" />
+            tools:listitem="@layout/raw_user_view" />
     </LinearLayout>
 </layout>
