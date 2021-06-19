@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="48dp"
+    android:layout_height="fill_parent"
+    android:layout_gravity="right" >
+
+    <!-- Menu Item Image -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:src="@drawable/ic_action_search" />
+
+</RelativeLayout>
+
+
+

@@ -10,7 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context=".user.ItemListFragment">
+        tools:context=".MainActivity">
+
+        <include
+            android:id="@+id/appbarCommon"
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/vendor_list_recycler"

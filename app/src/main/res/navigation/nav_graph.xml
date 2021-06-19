@@ -30,8 +30,9 @@
         <action
             android:id="@+id/action_userView_to_itemList"
             app:destination="@id/itemListFragment"
-            app:popUpTo="@id/nav_graph"
-            app:launchSingleTop="true" />
+            app:launchSingleTop="true"
+            app:popUpTo="@id/userViewFragment"
+            app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
