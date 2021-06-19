@@ -10,8 +10,7 @@
         <action
             android:id="@+id/action_login_to_user_view"
             app:destination="@id/userViewFragment"
-            app:popUpTo="@id/nav_graph"
-            app:launchSingleTop="true" />
+            app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -20,8 +19,7 @@
         <action
             android:id="@+id/action_splashFragment2_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:popUpTo="@id/nav_graph"
-            app:launchSingleTop="true" />
+            app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
         android:id="@+id/userViewFragment"
@@ -30,9 +28,7 @@
         <action
             android:id="@+id/action_userView_to_itemList"
             app:destination="@id/itemListFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/userViewFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/userViewFragment"/>
 
     </fragment>
     <fragment
@@ -42,5 +38,5 @@
         <argument
             android:name="id"
             app:argType="integer" />
-    </fragment>>
+    </fragment>
 </navigation>
