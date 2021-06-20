@@ -37,6 +37,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topAppBar"
             app:spanCount="1"
-            tools:listitem="@layout/raw_detail_item" />
+            tools:listitem="@layout/raw_detail_cart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

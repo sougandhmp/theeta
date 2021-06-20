@@ -1,4 +1,4 @@
-package com.android.theta.user
+package com.android.theta.user.Item
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,7 +10,8 @@ import com.android.theta.user.model.Item
 class ItemListAdapter : ListAdapter<Item, ItemListAdapter.ItemViewHolder>(Item.ItemDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        var binding=RawDetailItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        var binding=
+            RawDetailItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemListAdapter.ItemViewHolder(binding);
     }
 
