@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.android.theta.commons.CustomOnClickListener
 import com.android.theta.databinding.RawDetailItemBinding
 import com.android.theta.user.model.Item
 
-class ItemListAdapter(private val listener:View.OnClickListener) : ListAdapter<Item, ItemListAdapter.ItemViewHolder>(Item.ItemDiff) {
+class ItemListAdapter(private val listener:CustomOnClickListener) : ListAdapter<Item, ItemListAdapter.ItemViewHolder>(Item.ItemDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val binding=
@@ -26,7 +27,7 @@ class ItemListAdapter(private val listener:View.OnClickListener) : ListAdapter<I
 
 
 
-        fun bind(item: Item, listener: View.OnClickListener) {
+        fun bind(item: Item, listener: CustomOnClickListener) {
             binding.run {
                 this.item = item
                 this.clickListener=listener;

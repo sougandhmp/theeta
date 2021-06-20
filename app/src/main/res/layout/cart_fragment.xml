@@ -26,6 +26,8 @@
             android:onClick="backToHome"
             app:title="THETA" />
 
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/vendor_list_recycler"
             android:layout_width="match_parent"

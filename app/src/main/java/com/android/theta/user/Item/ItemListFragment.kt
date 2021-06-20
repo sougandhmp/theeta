@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.android.theta.MainActivityViewModel
 import com.android.theta.R
+import com.android.theta.commons.CustomOnClickListener
 import com.android.theta.commons.observe
 import com.android.theta.databinding.ItemListFragmentBinding
 import com.android.theta.user.model.Item
@@ -17,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ItemListFragment : Fragment(),View.OnClickListener {
+class ItemListFragment : Fragment(),CustomOnClickListener {
 
     private val viewModel by viewModels<ItemListViewModel>()
     private val activityViewModel by activityViewModels<MainActivityViewModel>();
@@ -75,8 +76,12 @@ class ItemListFragment : Fragment(),View.OnClickListener {
         }
     }
 
-    override fun onClick(v: View?) {
-        activityViewModel.addItem()
+    override fun onClick(cart: Item) {
+        Snackbar.make(binding.root, "Added ${cart.name} to Cart ", Snackbar.LENGTH_LONG)
+            .show()
+        activityViewModel.addItem(cart)
     }
+
+
 
 }

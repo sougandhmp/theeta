@@ -2,6 +2,7 @@ package com.android.theta
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.android.theta.user.model.Item
 import com.android.theta.user.model.ItemCart
 
 class MainActivityViewModel : ViewModel() {
@@ -16,16 +17,18 @@ class MainActivityViewModel : ViewModel() {
 
     }
 
-    fun addItem() {
+    fun addItem(cart: Item) {
+        var cartItem = ItemCart(
+            name = cart.name,
+            rating = cart.rating,
+            serveCount = cart.serveCount,
+            imgSrc = cart.desc,
+            desc = cart.desc,
+            price = cart.price
+        )
+
         itemList.add(
-            ItemCart(
-                name = "new added",
-                price = "100",
-                desc = "test.",
-                imgSrc = "test",
-                serveCount = "10",
-                rating = 1
-            )
+            cartItem
         )
         cartValue.postValue(itemList)
     }
