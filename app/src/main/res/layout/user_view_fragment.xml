@@ -6,25 +6,36 @@
     tools:targetApi="q">
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/root"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
-        <include
-            layout="@layout/app_bar_main"
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/top_app_bar"
+            app:title="THETA" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/vendor_list_recycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topAppBar"
             app:spanCount="2"
             tools:listitem="@layout/raw_user_view" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
