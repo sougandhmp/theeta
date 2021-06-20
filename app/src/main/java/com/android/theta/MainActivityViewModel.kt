@@ -68,5 +68,25 @@ class MainActivityViewModel : ViewModel() {
         cartValue.postValue(itemList)
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun clearItem(cart: ItemCart) {
+
+        var optional = itemList?.stream().filter {
+            it.id == cart.id
+        }.findFirst();
+        if (optional.isPresent) {
+            var itemCart = optional.get();
+          if(itemCart?.count >1)
+          {
+              itemCart?.count=--itemCart?.count
+              return
+          }
+
+            itemList.remove(itemCart)
+        }
+
+        cartValue.postValue(itemList)
+    }
+
 
 }

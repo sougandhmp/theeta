@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:textStyle="bold"
-                android:text="@{`₹ `+cart.count+` * `+cart.price}"
+                android:text="@{cart.count+` * ₹`+cart.price}"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="@color/black"
                 tools:ignore="MissingConstraints" />
@@ -108,6 +108,7 @@
                 style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="@{(v)-> clickListener.clearItem(cart)}"
                 android:layout_marginLeft="10dp"
                 android:text="Clear" />
 

@@ -68,6 +68,15 @@ class CartFragment : Fragment(), CustomRepeatListener {
         Snackbar.make(binding.root, "Repeated item  ${cart.name}", Snackbar.LENGTH_LONG)
             .show()
        activityViewModel.repeatItem(cart)
+        cartAdapter.notifyDataSetChanged()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    override fun clearItem(cart: ItemCart) {
+        Snackbar.make(binding.root, "reduced /removed  item  ${cart.name}", Snackbar.LENGTH_LONG)
+            .show()
+        activityViewModel.clearItem(cart)
+        cartAdapter.notifyDataSetChanged()
     }
 
 

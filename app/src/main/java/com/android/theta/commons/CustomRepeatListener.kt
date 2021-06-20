@@ -8,4 +8,5 @@ interface CustomRepeatListener {
 
     fun  onRepeat(cart: ItemCart)
 
+    fun clearItem(cart: ItemCart)
 }
