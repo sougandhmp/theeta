@@ -11,7 +11,7 @@
 
         <variable
             name="clickListener"
-            type="android.view.View.OnClickListener" />
+            type="com.android.theta.commons.CustomRepeatListener" />
     </data>
 
 
@@ -44,6 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
                     android:layout_toEndOf="@id/mtrl_list_item_icon"
                     android:text="@{cart.name}"
 
@@ -72,7 +73,7 @@
                     android:layout_below="@id/mtrl_list_item_secondary_text"
                     android:layout_gravity="center_vertical"
                     android:layout_toEndOf="@id/mtrl_list_item_icon"
-
+                    android:textStyle="bold"
 
                     android:text="@{`₹ `+cart.price}"
                     android:textAppearance="?attr/textAppearanceBody2"
@@ -80,6 +81,39 @@
                     tools:ignore="MissingConstraints" />
             </LinearLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"
+                android:text="@{`₹ `+cart.count+` * `+cart.price}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/black"
+                tools:ignore="MissingConstraints" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/repeat"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)-> clickListener.onRepeat(cart)}"
+                android:text="Repeat" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Clear" />
+
+        </LinearLayout>
+
+
 
 
     </LinearLayout>
