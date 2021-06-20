@@ -12,10 +12,6 @@ import com.android.theta.databinding.LoginFragmentBinding
 
 class LoginFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
-
     private lateinit var viewModel: LoginViewModel
     private lateinit var binding: LoginFragmentBinding
 
