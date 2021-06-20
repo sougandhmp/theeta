@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.theta.user.model.Cart
 import com.android.theta.user.model.Item
+import com.android.theta.user.model.ItemCart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -12,7 +13,7 @@ import java.util.*
 
 class CartViewModel : ViewModel() {
 
-     val cartValue=MutableLiveData<List<Item>>();
+     val cartValue=MutableLiveData<List<ItemCart>>();
 
     fun setItems(){
 
@@ -32,10 +33,10 @@ class CartViewModel : ViewModel() {
 
     }*/
 
-    private fun getItems(): LinkedList<Item> {
+    private fun getItems(): LinkedList<ItemCart> {
 
-        var items = LinkedList<Item>()
-        items.add(Item(name = "Chicken Italian Sandwich",price = "100",desc = "Chicken tikka, onion, capsicum, mayonnaise, lettuce.", imgSrc = "test",serveCount = "2",rating = 1))
+        var items = LinkedList<ItemCart>()
+        items.add(ItemCart(name = "Chicken Italian Sandwich",price = "100",desc = "Chicken tikka, onion, capsicum, mayonnaise, lettuce.", imgSrc = "test",serveCount = "2",rating = 1))
         return items
     }
 

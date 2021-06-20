@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="item"
-            type="com.android.theta.user.model.Item" />
+            name="cart"
+            type="com.android.theta.user.model.ItemCart" />
 
         <variable
             name="clickListener"
@@ -28,7 +28,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="104dp"
-                android:contentDescription="@{item.name}"
+                android:contentDescription="@{cart.name}"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/hotel1" />
 
@@ -42,14 +42,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{item.name}"
+                    android:text="@{cart.name}"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@{`INR:`+item.price}"
+                    android:text="@{`INR:`+cart.price}"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@{item.desc}"
+                    android:text="@{cart.desc}"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -79,7 +79,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginLeft="20dp"
                     android:numStars="5"
-                    android:rating="@{item.rating}" />
+                    android:rating="@{cart.rating}" />
 
                 <com.google.android.material.button.MaterialButton
                     style="?attr/borderlessButtonStyle"

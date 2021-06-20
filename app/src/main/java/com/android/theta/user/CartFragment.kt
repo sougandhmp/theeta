@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.android.theta.commons.observe
 import com.android.theta.databinding.CartFragmentBinding
-import com.android.theta.user.model.Item
+import com.android.theta.user.model.ItemCart
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -49,7 +49,7 @@ class CartFragment : Fragment() {
         }
     }
 
-    private fun observeItems(list: List<Item>?) {
+    private fun observeItems(list: List<ItemCart>?) {
         list ?: return
         cartAdapter.submitList(list)
     }
