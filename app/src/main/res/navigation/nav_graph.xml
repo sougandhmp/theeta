@@ -29,14 +29,33 @@
             android:id="@+id/action_userView_to_itemList"
             app:destination="@id/itemListFragment"
             app:popUpTo="@id/userViewFragment"/>
+        <action
+            android:id="@+id/action_userViewFragment_to_CartFragment"
+            app:destination="@id/CartFragment" />
 
     </fragment>
     <fragment
         android:id="@+id/itemListFragment"
-        android:name="com.android.theta.user.ItemListFragment"
+        android:name="com.android.theta.user.Item.ItemListFragment"
         android:label="ItemListFragment" >
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_itemListFragment_to_CartFragment"
+            app:destination="@id/CartFragment" />
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/userViewFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/CartFragment"
+        android:name="com.android.theta.user.CartFragment"
+        android:label="ItemListFragment" >
+
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/userViewFragment" />
     </fragment>
 </navigation>

@@ -1,17 +1,18 @@
-package com.android.theta.user
+package com.android.theta.user.Item
 
 import android.os.Bundle
-import android.view.*
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.android.theta.R
 import com.android.theta.commons.observe
 import com.android.theta.databinding.ItemListFragmentBinding
 import com.android.theta.user.model.Item
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class ItemListFragment : Fragment() {
@@ -63,8 +64,7 @@ class ItemListFragment : Fragment() {
                     true
                 }
                 R.id.badge_cart -> {
-                    Snackbar.make(binding.root, "Cart button clicked", Snackbar.LENGTH_LONG)
-                        .show()
+                    findNavController().navigate(R.id.action_itemListFragment_to_CartFragment)
                     true
                 }
                 else -> super.onOptionsItemSelected(it)

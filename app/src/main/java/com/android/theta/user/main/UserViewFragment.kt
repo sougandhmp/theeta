@@ -51,8 +51,7 @@ class UserViewFragment : Fragment() {
                     true
                 }
                 R.id.badge_cart -> {
-                    Snackbar.make(binding.root, "Cart button clicked", Snackbar.LENGTH_LONG)
-                        .show()
+                    findNavController().navigate(R.id.action_userViewFragment_to_CartFragment)
                     true
                 }
                 else -> super.onOptionsItemSelected(it)
