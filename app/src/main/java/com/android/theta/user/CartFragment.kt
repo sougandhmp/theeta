@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import com.android.theta.MainActivityViewModel
 import com.android.theta.commons.observe
 import com.android.theta.databinding.CartFragmentBinding
 import com.android.theta.user.model.ItemCart
@@ -16,14 +18,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class CartFragment : Fragment() {
 
 
-    private val viewModel by viewModels<CartViewModel>()
     private lateinit var binding: CartFragmentBinding
+    private val activityViewModel by activityViewModels<MainActivityViewModel>();
+
 
     private val cartAdapter = CartAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.setItems()
+        activityViewModel.setItems()
     }
 
     override fun onCreateView(
@@ -44,7 +47,7 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
-        viewModel.apply {
+        activityViewModel.apply {
             observe(cartValue, ::observeItems)
         }
     }

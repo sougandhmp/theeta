@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.android.theta.MainActivityViewModel
 import com.android.theta.R
 import com.android.theta.commons.observe
 import com.android.theta.databinding.ItemListFragmentBinding
@@ -15,12 +17,13 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ItemListFragment : Fragment() {
+class ItemListFragment : Fragment(),View.OnClickListener {
 
     private val viewModel by viewModels<ItemListViewModel>()
+    private val activityViewModel by activityViewModels<MainActivityViewModel>();
     private lateinit var binding: ItemListFragmentBinding
 
-    private val itemListAdapter = ItemListAdapter()
+    private val itemListAdapter = ItemListAdapter(this@ItemListFragment)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +73,10 @@ class ItemListFragment : Fragment() {
                 else -> super.onOptionsItemSelected(it)
             }
         }
+    }
+
+    override fun onClick(v: View?) {
+        activityViewModel.addItem()
     }
 
 }
