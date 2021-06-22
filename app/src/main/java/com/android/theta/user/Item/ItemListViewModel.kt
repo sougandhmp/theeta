@@ -31,6 +31,7 @@ class ItemListViewModel : ViewModel() {
       var items = LinkedList<Item>()
         items.add(
             Item(
+                id=1,
                 name = "Chicken Italian Sandwich",
                 price = "100",
                 desc = "Chicken tikka, onion, capsicum, mayonnaise, lettuce.",
@@ -41,6 +42,7 @@ class ItemListViewModel : ViewModel() {
         )
         items.add(
             Item(
+                id=2,
                 name = "Chicken Bucket Meal [Regular]",
                 price = "400",
                 desc = "8 pieces Fried Chicken + French Fries + Potato Wedges + 2 Coke [250 ml]",
@@ -51,6 +53,7 @@ class ItemListViewModel : ViewModel() {
         )
         items.add(
             Item(
+                id=3,
                 name = "Non Veg Meal for 2",
                 price = "400",
                 desc = "Chicken tikka, onion, capsicum, mayonnaise, lettuce",
@@ -61,6 +64,7 @@ class ItemListViewModel : ViewModel() {
         )
         items.add(
             Item(
+                id=4,
                 name = "Italian Sandwich",
                 price = "600",
                 desc = "Chicken tikka, onion, capsicum, mayonnaise, lettuce",
@@ -71,6 +75,7 @@ class ItemListViewModel : ViewModel() {
         )
         items.add(
             Item(
+                id=5,
                 name = "Bucket Meal",
                 price = "800",
                 desc = "Chicken tikka, onion, capsicum, mayonnaise, lettuce",

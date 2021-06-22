@@ -1,99 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-            name="item"
-            type="com.android.theta.user.model.Item" />
+            name="cart"
+            type="com.android.theta.user.model.ItemCart" />
 
         <variable
             name="clickListener"
-            type="android.view.View.OnClickListener" />
+            type="com.android.theta.commons.CustomRepeatListener" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:background="@drawable/customboarder"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/mtrl_list_item_icon"
+                android:layout_width="150dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@drawable/hotel1"
+                tools:ignore="MissingConstraints" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mtrl_list_item_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_toEndOf="@id/mtrl_list_item_icon"
+                    android:text="@{cart.name}"
+
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:textColor="@color/black"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/mtrl_list_item_secondary_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/mtrl_list_item_text"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toEndOf="@id/mtrl_list_item_icon"
+
+                    android:text="@{cart.desc}"
+
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/black"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/mtrl_list_item_tertiary_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mtrl_list_item_secondary_text"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toEndOf="@id/mtrl_list_item_icon"
+                    android:textStyle="bold"
+
+                    android:text="@{`₹ `+cart.price}"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/black"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Media -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:contentDescription="@{item.name}"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/hotel1" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <!-- Title, secondary and supporting text -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{item.name}"
-                    android:textAppearance="?attr/textAppearanceHeadline6" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@{`INR:`+item.price}"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@{item.desc}"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
-
-
-            </LinearLayout>
-
-            <!-- Buttons -->
-            <LinearLayout
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:orientation="horizontal">
-
-                <RatingBar
-                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="12dp"
-                    android:layout_marginLeft="20dp"
-                    android:numStars="5"
-                    android:rating="@{item.rating}" />
-
-                <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="155dp"
-                    android:text="Add" />
-
-
-
-
-            </LinearLayout>
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"
+                android:text="@{cart.count+` * ₹`+cart.price}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/black"
+                tools:ignore="MissingConstraints" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/repeat"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)-> clickListener.onRepeat(cart)}"
+                android:text="Repeat" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)-> clickListener.clearItem(cart)}"
+                android:layout_marginLeft="10dp"
+                android:text="Clear" />
 
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+
 </layout>
