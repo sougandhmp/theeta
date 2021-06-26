@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_blue_light"
+        android:background="@android:color/holo_red_light"
         tools:context=".MainActivity">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -14,7 +14,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="100dp"
-            android:src="@drawable/ic_takeout_dining"
+            android:src="@drawable/ic_baseline_add_business_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:hint="Enter your email address"
+            android:hint="Enter business email address"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
@@ -41,25 +41,13 @@
             app:layout_constraintStart_toStartOf="@+id/textInputEditText"
             app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/vendor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textSize="15dp"
-            android:textColorLink="@color/purple_700"
-            android:text="vendor?"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/loginButton"
-            app:layout_constraintStart_toStartOf="@+id/loginButton"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
-            android:text="Sign Up"
+            android:text="Register"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
