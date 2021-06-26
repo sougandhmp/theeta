@@ -19,6 +19,12 @@ class MainActivityViewModel : ViewModel() {
 
     }
 
+    fun getItems():List<ItemCart> {
+       return  itemList;
+
+
+    }
+
     @RequiresApi(Build.VERSION_CODES.N)
     fun addItem(cart: Item) {
 

@@ -8,13 +8,10 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import com.android.theta.MainActivityViewModel
-import com.android.theta.commons.CustomOnClickListener
 import com.android.theta.commons.CustomRepeatListener
 import com.android.theta.commons.observe
 import com.android.theta.databinding.CartFragmentBinding
-import com.android.theta.user.model.Item
 import com.android.theta.user.model.ItemCart
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,20 +43,39 @@ class CartFragment : Fragment(), CustomRepeatListener {
             }
             lifecycleOwner = this@CartFragment
         }
-        // handleAppBar()
+        binding.floatingActionButton.setOnClickListener() {
+
+            Snackbar.make(binding.root, "checkout", Snackbar.LENGTH_LONG)
+                .show()
+        }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
+        hideButton()
+
         activityViewModel.apply {
             observe(cartValue, ::observeItems)
         }
     }
 
+    private fun hideButton() {
+        binding.floatingActionButton.hide()
+    }
+
+    private fun showButton() {
+        binding.floatingActionButton.show()
+    }
+
+
     private fun observeItems(list: List<ItemCart>?) {
-        list ?: return
+        hideButton()
+        if (list == null || list.isEmpty()) {
+            return
+        }
+        showButton()
         cartAdapter.submitList(list)
     }
 
@@ -67,7 +83,7 @@ class CartFragment : Fragment(), CustomRepeatListener {
     override fun onRepeat(cart: ItemCart) {
         Snackbar.make(binding.root, "Repeated item  ${cart.name}", Snackbar.LENGTH_LONG)
             .show()
-       activityViewModel.repeatItem(cart)
+        activityViewModel.repeatItem(cart)
         cartAdapter.notifyDataSetChanged()
     }
 
@@ -76,6 +92,9 @@ class CartFragment : Fragment(), CustomRepeatListener {
         Snackbar.make(binding.root, "reduced /removed  item  ${cart.name}", Snackbar.LENGTH_LONG)
             .show()
         activityViewModel.clearItem(cart)
+        if (activityViewModel.getItems()?.isEmpty()) {
+            hideButton()
+        }
         cartAdapter.notifyDataSetChanged()
     }
 
