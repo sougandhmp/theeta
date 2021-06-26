@@ -16,16 +16,15 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:animateLayoutChanges="true"
+            android:animationCache="true"
+            android:clickable="true"
+            android:onClick="backToHome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:menu="@menu/top_app_bar"
-            android:animationCache="true"
-            android:animateLayoutChanges="true"
-            android:clickable="true"
-            android:onClick="backToHome"
             app:title="THETA" />
-
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -40,5 +39,23 @@
             app:layout_constraintTop_toBottomOf="@+id/topAppBar"
             app:spanCount="1"
             tools:listitem="@layout/raw_detail_cart" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Main content -->
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/floating_action_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+               android:layout_marginBottom="30dp"
+                android:layout_marginRight="20dp"
+
+                android:text="Checkout" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

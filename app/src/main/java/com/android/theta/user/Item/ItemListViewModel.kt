@@ -84,6 +84,28 @@ class ItemListViewModel : ViewModel() {
                 rating = 4
             )
         )
+        items.add(
+            Item(
+                id=6,
+                name = "Bucket Meal 2",
+                price = "800",
+                desc = " mayonnaise, lettuce",
+                imgSrc = "test",
+                serveCount = "6",
+                rating = 4
+            )
+        )
+        items.add(
+            Item(
+                id=7,
+                name = "Bucket Meal 3",
+                price = "800",
+                desc = "mayonnaise, lettuce",
+                imgSrc = "test",
+                serveCount = "6",
+                rating = 4
+            )
+        )
         return items
     }
 
