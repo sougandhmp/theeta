@@ -11,6 +11,9 @@
             android:id="@+id/action_login_to_user_view"
             app:destination="@id/userViewFragment"
             app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/action_loginFragment_to_VendorLoginFragment"
+            app:destination="@id/VendorLoginFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -57,5 +60,22 @@
         <action
             android:id="@+id/action_to_home"
             app:destination="@id/userViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/VendorLoginFragment"
+        android:name="com.android.theta.vendor.login.VendorLoginFragment"
+        android:label="VendorLoginFragment" >
+s
+        <action
+            android:id="@+id/action_VendorLoginFragment_to_VendorViewFragment"
+            app:destination="@id/VendorViewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/VendorViewFragment"
+        android:name="com.android.theta.vendor.main.VendorViewFragment"
+        android:label="VendorViewFragment" >
+
+
     </fragment>
 </navigation>

@@ -29,10 +29,17 @@ class LoginFragment : Fragment() {
         binding.loginButton.setOnClickListener {
             login()
         }
+        binding.vendor.setOnClickListener{
+
+            vendorLogin();
+        }
     }
 
     private fun login() {
         findNavController().navigate(R.id.action_login_to_user_view)
+    }
+    private fun vendorLogin() {
+        findNavController().navigate(R.id.action_loginFragment_to_VendorLoginFragment)
     }
 
 
