@@ -66,14 +66,14 @@
            android:layout_height="wrap_content"
            android:orientation="horizontal">
            <Button
-               android:id="@+id/outlinedButton"
+               android:id="@+id/addItem"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="Add item"
                style="?attr/materialButtonOutlinedStyle"
                />
            <Button
-               android:id="@+id/outlinedButton2"
+               android:id="@+id/order"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="Orders"

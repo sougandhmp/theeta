@@ -7,4 +7,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="store_offline">Store Offline</string>
     <string name="store_online">Store Online</string>
+    <string name="warning">Warning!</string>
 </resources>
