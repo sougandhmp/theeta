@@ -2,84 +2,34 @@ package com.android.theta.user.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.android.theta.user.model.Vendor
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.google.firebase.firestore.FirebaseFirestore
+import timber.log.Timber
+
 
 class UserViewModel : ViewModel() {
     // TODO: Implement the ViewModel
     val vendors = MutableLiveData<List<Vendor>>()
-
+    var db = FirebaseFirestore.getInstance()
     fun setHotelList() {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-
-                vendors.postValue(getHotelList())
+        db.collection("hotels").get()
+            .addOnSuccessListener { documentReference ->
+                val docs = documentReference.documents
+                val vendorList = arrayListOf<Vendor>()
+                Timber.d("DocumentSnapshot added with ID: ${docs.size}")
+                for (doc in docs) {
+                    val vendor = Vendor(
+                        id = doc.id,
+                        name = doc["name"] as String,
+                        styleName = doc["address"] as String,
+                        avgPriceForTwo = doc["phoneNo"] as String,
+                        imgUrl = doc["imgUrl"] as String
+                    )
+                    vendorList.add(vendor)
+                }
+                vendors.postValue(vendorList)
             }
-        }
+            .addOnFailureListener { e -> Timber.w("Error adding document ${e.message}") }
     }
-
-    private fun getHotelList(): List<Vendor> {
-        var vendors = ArrayList<Vendor>()
-        vendors.add(
-            Vendor(
-                id = 1,
-                name = "Hotel1",
-                styleName = "kerala",
-                avgPriceForTwo = "200",
-                imgUrl = "@drawable/hotel1"
-            )
-        )
-        vendors.add(
-            Vendor(
-                id = 2,
-                name = "Hotel2",
-                styleName = "south",
-                avgPriceForTwo = "200",
-                imgUrl = "@drawable/hotel1"
-            )
-        )
-        vendors.add(
-            Vendor(
-                id = 3,
-                name = "Hotel3",
-                styleName = "north",
-                avgPriceForTwo = "100",
-                imgUrl = "@drawable/hotel1"
-            )
-        )
-        vendors.add(
-            Vendor(
-                id = 4,
-                name = "Hotel4",
-                styleName = "south",
-                avgPriceForTwo = "300",
-                imgUrl = "@drawable/hotel1"
-            )
-        )
-        vendors.add(
-            Vendor(
-                id = 5,
-                name = "Hotel5",
-                styleName = "north",
-                avgPriceForTwo = "600",
-                imgUrl = "@drawable/hotel1"
-            )
-        )
-        vendors.add(
-            Vendor(
-                id = 6,
-                name = "Hotel6",
-                styleName = "south",
-                avgPriceForTwo = "700",
-                imgUrl = "@drawable/hotel1"
-            )
-        )
-        return vendors;
-
-    }
-
 
 }

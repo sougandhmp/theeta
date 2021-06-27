@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.theta.databinding.RawUserViewBinding
 import com.android.theta.user.model.Vendor
+import com.bumptech.glide.Glide
 import java.util.logging.Logger
 
 class UserViewAdapter : ListAdapter<Vendor, UserViewAdapter.UserViewHolder>(Vendor.VendorDiff) {
@@ -38,7 +39,7 @@ class UserViewAdapter : ListAdapter<Vendor, UserViewAdapter.UserViewHolder>(Vend
             }
         }
 
-        private fun navigateToPostDetail(view: View, id: Int) {
+        private fun navigateToPostDetail(view: View, id: String) {
             LOG.info("[UserViewAdapter] [navigateToPostDetail] with id : $id")
             val action = UserViewFragmentDirections.actionUserViewToItemList(id);
             view.findNavController().navigate(action)

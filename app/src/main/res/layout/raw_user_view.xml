@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
             name="vendor"
             type="com.android.theta.user.model.Vendor" />
+
         <variable
             name="clickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
         android:onClick="@{clickListener}"
-        android:transitionName="@{vendor.name}">
+        android:transitionName="@{vendor.name}"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/vendorLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-         <ImageView
+            <ImageView
                 android:id="@+id/left_thumb"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-               android:src="@drawable/hotel1"
+                srcUrl="@{vendor.imgUrl}"
                 app:layout_constraintBottom_toTopOf="@+id/left_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,8 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{vendor.name}"
-                android:textColor="@color/black"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

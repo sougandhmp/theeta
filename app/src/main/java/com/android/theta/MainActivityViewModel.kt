@@ -28,19 +28,19 @@ class MainActivityViewModel : ViewModel() {
     @RequiresApi(Build.VERSION_CODES.N)
     fun addItem(cart: Item) {
 
-       var optional= itemList?.stream().filter {
+       val optional= itemList.stream().filter {
             it.id == cart.id
         }.findFirst();
         if(optional.isPresent)
         {
-           var itemCart= optional.get();
-            itemCart?.count=++itemCart?.count
+           val itemCart= optional.get();
+            itemCart.count =++itemCart.count
             return
 
         }
 
 
-        var cartItem = ItemCart(
+        val cartItem = ItemCart(
             id=cart.id,
             name = cart.name,
             count = 1,
@@ -59,12 +59,12 @@ class MainActivityViewModel : ViewModel() {
     @RequiresApi(Build.VERSION_CODES.N)
     fun repeatItem(cart: ItemCart) {
 
-        var optional = itemList?.stream().filter {
+        val optional = itemList.stream().filter {
             it.id == cart.id
         }.findFirst();
         if (optional.isPresent) {
-            var itemCart = optional.get();
-            itemCart?.count = ++itemCart?.count
+            val itemCart = optional.get();
+            itemCart.count = ++itemCart.count
             return
 
         }
@@ -77,14 +77,14 @@ class MainActivityViewModel : ViewModel() {
     @RequiresApi(Build.VERSION_CODES.N)
     fun clearItem(cart: ItemCart) {
 
-        var optional = itemList?.stream().filter {
+        val optional = itemList.stream().filter {
             it.id == cart.id
         }.findFirst();
         if (optional.isPresent) {
-            var itemCart = optional.get();
-          if(itemCart?.count >1)
+            val itemCart = optional.get();
+          if(itemCart.count >1)
           {
-              itemCart?.count=--itemCart?.count
+              itemCart.count =--itemCart.count
               return
           }
 
