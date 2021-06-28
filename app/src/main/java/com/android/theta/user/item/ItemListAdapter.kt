@@ -1,7 +1,6 @@
-package com.android.theta.user.Item
+package com.android.theta.user.item
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView

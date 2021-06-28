@@ -1,35 +1,34 @@
-package com.android.theta.user.main
+package com.android.theta.user.item
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.android.theta.user.model.Vendor
+import com.android.theta.user.model.Item
 import com.google.firebase.firestore.FirebaseFirestore
 import timber.log.Timber
 
+class ItemListViewModel : ViewModel() {
 
-class UserViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
-    val vendors = MutableLiveData<List<Vendor>>()
+    val itemList = MutableLiveData<List<Item>>()
     var db = FirebaseFirestore.getInstance()
-    fun setHotelList() {
-        db.collection("hotels").get()
+    fun setItems(id: String) {
+        db.collection("hotels").document(id).collection("items").get()
             .addOnSuccessListener { documentReference ->
                 val docs = documentReference.documents
-                val vendorList = arrayListOf<Vendor>()
+                val vendorList = arrayListOf<Item>()
                 Timber.d("DocumentSnapshot added with ID: ${docs.size}")
                 for (doc in docs) {
-                    val vendor = Vendor(
+                    val vendor = Item(
                         id = doc.id,
                         name = doc["name"] as String,
-                        styleName = doc["address"] as String,
-                        avgPriceForTwo = doc["phoneNo"] as String,
-                        imgUrl = doc["imgUrl"] as String
+                        price = doc["price"] as Long,
+                        imgSrc = doc["image"] as String,
+                        rating = doc["rating"] as Long
                     )
                     vendorList.add(vendor)
                 }
-                vendors.postValue(vendorList)
+                itemList.postValue(vendorList)
             }
             .addOnFailureListener { e -> Timber.w("Error adding document ${e.message}") }
-    }
 
+    }
 }

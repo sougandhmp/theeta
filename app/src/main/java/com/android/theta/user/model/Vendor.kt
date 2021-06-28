@@ -3,7 +3,7 @@ package com.android.theta.user.model
 import androidx.recyclerview.widget.DiffUtil
 
 data class Vendor(
-     var id: Int,
+     var id: String,
      var name: String,
      var styleName: String,
      var avgPriceForTwo: String,

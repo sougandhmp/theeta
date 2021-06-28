@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "539785867358",
+    "project_id": "theeta-134c1",
+    "storage_bucket": "theeta-134c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539785867358:android:4df5801fc1c903c21544cf",
+        "android_client_info": {
+          "package_name": "com.android.theta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539785867358-bt14c9f522h3494q8pgi9b6lv46ruco8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.theta",
+            "certificate_hash": "610d57105d0a2796240e019ae6dc72bb60c21095"
+          }
+        },
+        {
+          "client_id": "539785867358-o82qpni4ekcin0abmffvc2tbscls729j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvFuOCufuSaHYKWyERSu3cgH2TVriDqII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539785867358-o82qpni4ekcin0abmffvc2tbscls729j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

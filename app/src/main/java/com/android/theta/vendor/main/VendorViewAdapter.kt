@@ -4,11 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.android.theta.databinding.RawDetailItemBinding
-import com.android.theta.databinding.RawUserViewBinding
 import com.android.theta.databinding.RawVendorItemViewBinding
-import com.android.theta.user.Item.ItemListAdapter
-import com.android.theta.user.model.Vendor
 import com.android.theta.vendor.model.VendorItem
 
 class VendorViewAdapter : ListAdapter<VendorItem, VendorViewAdapter.VendorViewHolder>(VendorItem.ItemDiff) {

@@ -1,4 +1,4 @@
-package com.android.theta.user.Item
+package com.android.theta.user.item
 
 import android.os.Build
 import android.os.Bundle
@@ -10,13 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.android.theta.MainActivityViewModel
 import com.android.theta.R
 import com.android.theta.commons.CustomOnClickListener
 import com.android.theta.commons.observe
 import com.android.theta.databinding.ItemListFragmentBinding
 import com.android.theta.user.model.Item
-import com.android.theta.user.model.ItemCart
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,12 +26,13 @@ class ItemListFragment : Fragment(),CustomOnClickListener {
     private val viewModel by viewModels<ItemListViewModel>()
     private val activityViewModel by activityViewModels<MainActivityViewModel>();
     private lateinit var binding: ItemListFragmentBinding
+    private val args by navArgs<ItemListFragmentArgs>()
 
     private val itemListAdapter = ItemListAdapter(this@ItemListFragment)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.setItems()
+        viewModel.setItems(args.id)
     }
 
     override fun onCreateView(
