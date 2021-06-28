@@ -29,12 +29,11 @@
                 style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center|right"
                 android:layout_marginLeft="90dp"
+                android:gravity="center|right"
                 android:text="Store offline"
                 android:textColor="@color/white"
                 tools:ignore="RtlHardcoded" />
-
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -49,38 +48,43 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/vendor_list_recycler2"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topAppBar"
             app:layout_constraintVertical_bias="1.0"
             app:spanCount="1"
-            android:layout_marginBottom="50dp"
             tools:listitem="@layout/raw_vendor_item_view" />
-       <LinearLayout
-           android:id="@+id/vendor_list_recycler2"
-           android:layout_width="match_parent"
-           app:layout_constraintTop_toBottomOf="@+id/vendor_list_recycler"
-           app:layout_constraintVertical_bias="0.0"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           android:gravity="center"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal">
-           <Button
-               android:id="@+id/addItem"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Add item"
-               style="?attr/materialButtonOutlinedStyle"
-               />
-           <Button
-               android:id="@+id/order"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Orders"
-               style="?attr/materialButtonOutlinedStyle"
-               />
 
-       </LinearLayout>
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="16dp">
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/addItem"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="80dp"
+                android:text="Add item"
+                tools:ignore="RtlCompat" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/order"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Orders"
+                tools:ignore="RtlCompat" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        >
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

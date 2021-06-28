@@ -104,7 +104,7 @@ class VendorViewFragment : Fragment() {
             .setPositiveButton("accept") { dialog, which ->
                 buttonView.text = text
             }
-            .show()
+            .show().setCanceledOnTouchOutside(false)
     }
 
 }
