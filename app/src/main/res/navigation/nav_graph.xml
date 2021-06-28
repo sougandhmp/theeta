@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/itemListFragment"
-        android:name="com.android.theta.user.Item.ItemListFragment"
+        android:name="com.android.theta.user.item.ItemListFragment"
         android:label="ItemListFragment" >
         <argument
             android:name="id"

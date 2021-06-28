@@ -92,7 +92,7 @@ class CartFragment : Fragment(), CustomRepeatListener {
         Snackbar.make(binding.root, "reduced /removed  item  ${cart.name}", Snackbar.LENGTH_LONG)
             .show()
         activityViewModel.clearItem(cart)
-        if (activityViewModel.getItems()?.isEmpty()) {
+        if (activityViewModel.getItems().isEmpty()) {
             hideButton()
         }
         cartAdapter.notifyDataSetChanged()

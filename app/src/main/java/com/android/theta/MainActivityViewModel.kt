@@ -41,7 +41,7 @@ class MainActivityViewModel : ViewModel() {
 
 
         val cartItem = ItemCart(
-            id=cart.id,
+            id =cart.id,
             name = cart.name,
             count = 1,
             serveCount = cart.serveCount,
