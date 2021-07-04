@@ -29,13 +29,11 @@
                 style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center|right"
                 android:layout_marginLeft="90dp"
+                android:gravity="center|right"
                 android:text="Store offline"
                 android:textColor="@color/white"
                 tools:ignore="RtlHardcoded" />
-
-
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -44,6 +42,7 @@
             android:id="@+id/vendor_list_recycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginBottom="50dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -53,34 +52,34 @@
             app:layout_constraintTop_toBottomOf="@+id/topAppBar"
             app:layout_constraintVertical_bias="1.0"
             app:spanCount="1"
-            android:layout_marginBottom="50dp"
             tools:listitem="@layout/raw_vendor_item_view" />
-       <LinearLayout
-           android:id="@+id/vendor_list_recycler2"
-           android:layout_width="match_parent"
-           app:layout_constraintTop_toBottomOf="@+id/vendor_list_recycler"
-           app:layout_constraintVertical_bias="0.0"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           android:gravity="center"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal">
-           <Button
-               android:id="@+id/addItem"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Add item"
-               style="?attr/materialButtonOutlinedStyle"
-               />
-           <Button
-               android:id="@+id/order"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Orders"
-               style="?attr/materialButtonOutlinedStyle"
-               />
 
-       </LinearLayout>
+        <LinearLayout
+            android:id="@+id/vendor_list_recycler2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vendor_list_recycler"
+            app:layout_constraintVertical_bias="0.0">
+
+            <Button
+                android:id="@+id/addItem"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add item" />
+
+            <Button
+                android:id="@+id/order"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orders" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
