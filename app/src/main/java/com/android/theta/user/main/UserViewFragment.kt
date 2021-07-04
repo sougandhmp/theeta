@@ -48,6 +48,7 @@ class UserViewFragment : Fragment() {
                 R.id.badge_search -> {
                     Snackbar.make(binding.root, "Search button clicked", Snackbar.LENGTH_LONG)
                         .show()
+                    findNavController().navigate(R.id.action_userViewFragment_to_VendorViewFragment)
                     true
                 }
                 R.id.badge_cart -> {

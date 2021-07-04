@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.CompoundButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.android.theta.R
 import com.android.theta.commons.observe
 import com.android.theta.databinding.VendorViewFragmentBinding
@@ -40,7 +41,9 @@ class VendorViewFragment : Fragment() {
             }
             lifecycleOwner = this@VendorViewFragment
         }
-        var thiscontext = context
+        binding.addItem.setOnClickListener {
+            findNavController().navigate(R.id.action_VendorViewFragment_to_addItemFragment)
+        }
         context?.let { onlineSwitch(it) }
         return binding.root
     }
@@ -50,7 +53,7 @@ class VendorViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
         vendorViewModel.apply {
-            observe(vendorView, ::observeItems)
+            observe(vendorItemList, ::observeItems)
         }
     }
 
@@ -62,26 +65,23 @@ class VendorViewFragment : Fragment() {
 
     private fun onlineSwitch(context: Context) {
         binding.switchButton.setOnCheckedChangeListener { buttonView, isChecked ->
-            run {
-                if (isChecked)
-                    dialog(
-                        context,
-                        buttonView,
-                        getString(R.string.warning),
-                        "You really want  to go online?",
-                        getString(R.string.store_online)
-                    )
+            if (isChecked)
+                dialog(
+                    context,
+                    buttonView,
+                    getString(R.string.warning),
+                    "You really want  to go online?",
+                    getString(R.string.store_online)
+                )
+            else
+                dialog(
+                    context,
+                    buttonView,
+                    getString(R.string.warning),
+                    "You really want  to go offline ?",
+                    getString(R.string.store_offline)
+                )
 
-                 else
-                    dialog(
-                        context,
-                        buttonView,
-                        getString(R.string.warning),
-                        "You really want  to go offline ?",
-                        getString(R.string.store_offline)
-                    )
-
-            }
         }
     }
 

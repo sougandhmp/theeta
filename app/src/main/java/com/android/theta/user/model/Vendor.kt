@@ -6,7 +6,7 @@ data class Vendor(
      var id: String,
      var name: String,
      var styleName: String,
-     var avgPriceForTwo: String,
+     var contactNo: String,
      var imgUrl: String
 ) {
      object VendorDiff : DiffUtil.ItemCallback<Vendor>() {

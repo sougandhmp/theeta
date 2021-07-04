@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_userViewFragment_to_CartFragment"
             app:destination="@id/CartFragment" />
+        <action
+            android:id="@+id/action_userViewFragment_to_VendorViewFragment"
+            app:destination="@id/VendorViewFragment" />
 
     </fragment>
     <fragment
@@ -65,7 +68,6 @@
         android:id="@+id/VendorLoginFragment"
         android:name="com.android.theta.vendor.login.VendorLoginFragment"
         android:label="VendorLoginFragment" >
-s
         <action
             android:id="@+id/action_VendorLoginFragment_to_VendorViewFragment"
             app:destination="@id/VendorViewFragment" />
@@ -77,5 +79,12 @@ s
         android:label="VendorViewFragment" >
 
 
+        <action
+            android:id="@+id/action_VendorViewFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.android.theta.vendor.new_item.AddItemFragment"
+        android:label="AddItemFragment" />
 </navigation>

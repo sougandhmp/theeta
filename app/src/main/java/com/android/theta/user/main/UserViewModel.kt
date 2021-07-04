@@ -8,7 +8,6 @@ import timber.log.Timber
 
 
 class UserViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
     val vendors = MutableLiveData<List<Vendor>>()
     var db = FirebaseFirestore.getInstance()
     fun setHotelList() {
@@ -22,8 +21,8 @@ class UserViewModel : ViewModel() {
                         id = doc.id,
                         name = doc["name"] as String,
                         styleName = doc["address"] as String,
-                        avgPriceForTwo = doc["phoneNo"] as String,
-                        imgUrl = doc["imgUrl"] as String
+                        contactNo = doc["contact_no"] as String,
+                        imgUrl = doc["img_url"] as String
                     )
                     vendorList.add(vendor)
                 }
